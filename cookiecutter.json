@@ -1,12 +1,20 @@
 {
-  "full_name": "Audrey M. Roy Greenfeld",
-  "email": "audreyfeldroy@example.com",
-  "github_username": "audreyfeldroy",
-  "pypi_package_name": "python-boilerplate",
-  "project_name": "Python Boilerplate",
+  "project_name": "Apigen Python",
+  "pypi_package_name": "apigen-python",
+  "definition": ["openapi", "graphql", "asyncapi"],
   "project_slug": "{{ cookiecutter.pypi_package_name.replace('-', '_') }}",
-  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-  "pypi_username": "{{ cookiecutter.github_username }}",
+  "project_short_description": "Python client for Apigen API.",
+  "models": [
+    {
+      "name": "Model1",
+      "description": "Description for Model1"
+    },
+    {
+      "name": "Model2",
+      "description": "Description for Model2"
+    }
+  ],
   "first_version": "0.1.0",
+  "_copy_without_render": ["{{ cookiecutter.pypi_package_name.replace('-', '_') }}/templates/raw/*"],
   "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 }
