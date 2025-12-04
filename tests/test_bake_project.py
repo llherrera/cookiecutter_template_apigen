@@ -55,6 +55,15 @@ def check_output_inside_dir(command, dirpath):
 
 def test_year_compute_in_license_file(cookies):
     with bake_in_temp_dir(cookies) as result:
+
+        result = cookies.bake()
+        print("exit_code:", result.exit_code)
+        print("exception:", result.exception)
+        print("project:", result.project)
+        assert result.exit_code == 0, f"Cookiecutter falló: {result.exception}"
+        assert result.exception is None
+        assert result.project is not None
+
         license_file_path = result.project.join("LICENSE")
         now = datetime.datetime.now()
         assert str(now.year) in license_file_path.read()
